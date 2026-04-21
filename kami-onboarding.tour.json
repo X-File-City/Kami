@@ -1,0 +1,222 @@
+{
+  "id": "kami-onboarding",
+  "title": "Kami · Document Template System Tour",
+  "description": "Tour the Kami repo — the 出文档 (Kami) member of the Kaku · Waza · Kami trilogy. Warm rice-paper + ink-blue editorial templates in two languages.",
+  "version": "1.0.0",
+  "audience": "Designers & Engineers onboarding to Kami",
+  "prerequisites": [
+    "Familiarity with HTML/CSS",
+    "Python 3 + WeasyPrint for local builds"
+  ],
+  "steps": [
+    {
+      "id": "step-1-overview",
+      "title": "Welcome to Kami",
+      "description": "Kami (出文档 / produce documents) is the document-template third of the Kaku · Waza · Kami trilogy. Warm rice-paper base with ink-blue accents, serif-led hierarchy, and editorial whitespace across six template types in two languages.",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-2-entry-points",
+      "title": "Entry Points for Claude & Humans",
+      "description": "Start here. The skill file is the routing rulebook Claude reads to pick the right template. Project instructions capture house rules. The readme explains the system to humans, and the cheatsheet is the fast design reference, offered in both languages.",
+      "estimatedTime": 90,
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "entry-docs",
+          "name": "Entry Documents",
+          "color": "#2b4a7a",
+          "items": [
+            { "path": "SKILL.md", "type": "file" },
+            { "path": "CLAUDE.md", "type": "file" },
+            { "path": "README.md", "type": "file" },
+            { "path": "CHEATSHEET.md", "type": "file" },
+            { "path": "CHEATSHEET.en.md", "type": "file" }
+          ],
+          "opacity": 0.75,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-3-design-language",
+      "title": "The Nine Iron Rules — Design References",
+      "description": "The references folder holds the non-negotiable design spec. The design doc defines the nine iron rules for color, typography, and spacing. The writing doc governs copy. The production doc catalogues the print pitfalls to avoid. A single tokens file is the source of truth for every design token.",
+      "estimatedTime": 120,
+      "focusDirectory": "references",
+      "highlightLayers": [
+        {
+          "id": "design-specs",
+          "name": "Design Specifications",
+          "color": "#8b5a2b",
+          "items": [
+            { "path": "references/design.md", "type": "file" },
+            { "path": "references/design.en.md", "type": "file" },
+            { "path": "references/tokens.json", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "writing-specs",
+          "name": "Writing & Production",
+          "color": "#4a6b8a",
+          "items": [
+            { "path": "references/writing.md", "type": "file" },
+            { "path": "references/writing.en.md", "type": "file" },
+            { "path": "references/production.md", "type": "file" },
+            { "path": "references/production.en.md", "type": "file" },
+            { "path": "references/diagrams.md", "type": "file" },
+            { "path": "references/diagrams.en.md", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-4-templates",
+      "title": "Six Templates × Two Languages",
+      "description": "The heart of Kami. Six document types — letter, long-doc, one-pager, portfolio, resume, and slides — each offered in Chinese (the default) and English. Web templates render to PDF through WeasyPrint; the slides template generates PowerPoint. Style blocks inside each template are where you adjust its tokens.",
+      "estimatedTime": 180,
+      "focusDirectory": "assets/templates",
+      "highlightLayers": [
+        {
+          "id": "zh-templates",
+          "name": "Chinese Templates (default)",
+          "color": "#b84a3a",
+          "items": [
+            { "path": "assets/templates/letter.html", "type": "file" },
+            { "path": "assets/templates/long-doc.html", "type": "file" },
+            { "path": "assets/templates/one-pager.html", "type": "file" },
+            { "path": "assets/templates/portfolio.html", "type": "file" },
+            { "path": "assets/templates/resume.html", "type": "file" },
+            { "path": "assets/templates/slides.py", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "en-templates",
+          "name": "English Templates",
+          "color": "#2b4a7a",
+          "items": [
+            { "path": "assets/templates/letter-en.html", "type": "file" },
+            { "path": "assets/templates/long-doc-en.html", "type": "file" },
+            { "path": "assets/templates/one-pager-en.html", "type": "file" },
+            { "path": "assets/templates/portfolio-en.html", "type": "file" },
+            { "path": "assets/templates/resume-en.html", "type": "file" },
+            { "path": "assets/templates/slides-en.py", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes",
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Open the resume template to see the strict two-page layout — watch for overflow.",
+          "target": "assets/templates/resume.html"
+        }
+      ]
+    },
+    {
+      "id": "step-5-build-pipeline",
+      "title": "The Build Script",
+      "description": "A single build script is the whole pipeline. Run it to generate PDF, PNG, and PowerPoint for every template; run it with the check flag to sweep the stylesheets for translucency, cold grays, and line-height drift. Expected page counts: one-pager one, letter one, resume two (strict), long-doc seven give or take two, portfolio six give or take two.",
+      "estimatedTime": 90,
+      "focusDirectory": "scripts",
+      "highlightLayers": [
+        {
+          "id": "build-layer",
+          "name": "Build Pipeline",
+          "color": "#d9a441",
+          "items": [
+            { "path": "scripts/build.py", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-6-outputs",
+      "title": "Demo Outputs & Assets",
+      "description": "The demos folder holds the rendered showcase used on the readme — regenerate it whenever styles change. Fonts ship alongside: Tsanger Jinkai is the licensed Chinese face, with a fallback chain through Source Han Serif, Noto Serif CJK, and Songti down to Georgia. English templates set in Newsreader.",
+      "estimatedTime": 90,
+      "focusDirectory": "assets",
+      "highlightLayers": [
+        {
+          "id": "demos-layer",
+          "name": "Rendered Demos",
+          "color": "#6b8e4e",
+          "items": [
+            { "path": "assets/demos", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        },
+        {
+          "id": "fonts-layer",
+          "name": "Fonts & Images",
+          "color": "#8b5a2b",
+          "items": [
+            { "path": "assets/fonts", "type": "directory" },
+            { "path": "assets/images", "type": "directory" },
+            { "path": "assets/diagrams", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-7-live-previews",
+      "title": "Live Web Previews",
+      "description": "The bilingual landing pages are live previews of Kami's design system in the browser, both sharing a single stylesheet. Open either one locally to see the rice-paper base and ink-blue accents in action.",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "web-layer",
+          "name": "Web Preview",
+          "color": "#4a6b8a",
+          "items": [
+            { "path": "index.html", "type": "file" },
+            { "path": "index-en.html", "type": "file" },
+            { "path": "styles.css", "type": "file" }
+          ],
+          "opacity": 0.75,
+          "renderStrategy": "border"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-8-next-steps",
+      "title": "Next Steps",
+      "description": "To change styles, update the design spec and the matching style blocks across every template, then rebuild and confirm page counts still hold. To change content, leave the styles alone, edit the body, and rebuild. To add a template, copy the nearest match, align it with the design spec, register a route for Claude, and drop a fresh demo into the showcase. And always keep the seven high-risk print pitfalls from the production notes in mind.",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "colorMode": "fileTypes"
+    }
+  ],
+  "metadata": {
+    "author": "Kami Team",
+    "createdAt": "2026-04-21T00:00:00.000Z",
+    "tags": [
+      "onboarding",
+      "documentation",
+      "design-system",
+      "bilingual",
+      "weasyprint"
+    ]
+  }
+}
