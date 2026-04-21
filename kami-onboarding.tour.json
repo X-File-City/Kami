@@ -1,7 +1,7 @@
 {
   "id": "kami-onboarding",
   "title": "Kami · Document Template System Tour",
-  "description": "Tour the Kami repo — the 出文档 (Kami) member of the Kaku · Waza · Kami trilogy. Warm rice-paper + ink-blue editorial templates in two languages.",
+  "description": "Tour the Kami repo — the document-template member of the Kaku · Waza · Kami trilogy. Warm rice-paper + ink-blue editorial templates in two languages.",
   "version": "1.0.0",
   "audience": "Designers & Engineers onboarding to Kami",
   "prerequisites": [
@@ -12,7 +12,7 @@
     {
       "id": "step-1-overview",
       "title": "Welcome to Kami",
-      "description": "Kami (出文档 / produce documents) is the document-template third of the Kaku · Waza · Kami trilogy. Warm rice-paper base with ink-blue accents, serif-led hierarchy, and editorial whitespace across six template types in two languages.",
+      "description": "Kami is the document-template third of the Kaku · Waza · Kami trilogy. Warm rice-paper base with ink-blue accents, serif-led hierarchy, and editorial whitespace across six template types in two languages.",
       "estimatedTime": 60,
       "focusDirectory": "",
       "colorMode": "fileTypes"
